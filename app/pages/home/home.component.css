@@ -1,0 +1,227 @@
+.carousel-inner {
+  height: 660px;
+  box-shadow: inset 0 0 300px black !important;
+}
+
+.carousel-inner .carousel-item img {
+  height: 660px;
+  object-fit: cover;
+  opacity: 40%;
+}
+
+.emtydiv {
+  height: 10px;
+  background-color: gray;
+}
+
+.emtydiv1 {
+  width: 100%;
+  position: absolute;
+  top: 410px;
+  z-index: 999 !important;
+  height: 250px;
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), black);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.card {
+  overflow: hidden;
+  border-radius: 10px;
+  display: inline-block;
+  color: orangered;
+}
+
+::-webkit-scrollbar {
+  height: 0px;
+}
+
+.card img {
+  border-radius: 10px;
+  height: 330px !important;
+}
+
+.card:hover {
+  /* box-shadow:  1px 1px 10px red; */
+  box-shadow: 1px 1px 10px white;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 22px;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.form-control {
+  height: 45px;
+  width: 50%;
+  border-radius: 30px;
+}
+
+.searchbtn {
+  border-radius: 30px;
+}
+
+.maintext {
+  left: 400px;
+  position: absolute;
+  width: auto;
+  top: 200px;
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 30px 0 0 30px;
+}
+
+.searchbtn {
+  border-radius: 0 30px 30px 0;
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+}
+
+.welcome {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 90px;
+  margin-bottom: 20px;
+  margin-top: -10px;
+}
+
+.text {
+  font-size: 23.5px;
+  margin-top: -10px;
+}
+
+.shownames {
+  margin-top: 25px;
+  background-color: white;
+  border-radius: 20px;
+  width: auto;
+  padding: 3px;
+}
+
+.shownames a {
+  padding-top: 2px;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 0.1px;
+  width: 90px;
+}
+
+.shownames a:hover {
+  cursor: pointer;
+}
+
+.active1 {
+  border-radius: 30px;
+  width: 80px;
+  padding: 4px;
+  color: white !important;
+  background-image: linear-gradient(to right, red, yellow);
+}
+.active2 {
+  border-radius: 30px;
+  width: 80px;
+  padding: 4px;
+  color: white !important;
+  background-image: linear-gradient(to right, red, yellow);
+}
+.active3 {
+  border-radius: 30px;
+  width: 80px;
+  padding: 4px;
+  color: white !important;
+  background-image: linear-gradient(to right, red, yellow);
+}
+.active4 {
+  border-radius: 30px;
+  width: 80px;
+  padding: 4px;
+  color: white !important;
+  background-image: linear-gradient(to right, red, yellow);
+}
+
+.active5 {
+  border-radius: 30px;
+  width: 80px;
+  padding: 4px;
+  color: white !important;
+  background-image: linear-gradient(to right, red, yellow);
+}
+.active6 {
+  border-radius: 30px;
+  width: 80px;
+  padding: 4px;
+  color: white !important;
+  background-image: linear-gradient(to right, red, yellow);
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel-inner {
+    height: 530px;
+  }
+
+  .maintext {
+    left: 0px;
+    top: 167px;
+  }
+
+  .welcome {
+    font-weight: bold;
+    font-size: 55px;
+    margin-top: -50px;
+  }
+
+  .text {
+    font-size: 18px;
+    margin-top: -25px;
+  }
+
+  .emtydiv1 {
+    top: 250px;
+  }
+
+  .card {
+    width: 150px !important;
+  }
+
+  .card img {
+    height: 185px !important;
+  }
+
+  .heading {
+    font-size: 18px;
+  }
+
+  .shownames a {
+    font-weight: normal;
+    width: 80px;
+  }
+
+.emtydiv1 {
+  top: 351px;
+  height: 200px;
+  padding-bottom: 5px;
+}
+
+.spinner{
+  height: auto;
+  width: 100% !important;
+  background-color: white !important;
+  justify-content: center !important;
+  text-align: center;
+}
+
+}

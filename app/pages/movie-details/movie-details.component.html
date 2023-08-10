@@ -1,0 +1,66 @@
+<app-nav-bar></app-nav-bar>
+<div *ngIf="isLoading" class="d-flex justify-content-center align-items-center spinner">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="modal fade modal-xl " style="z-index: 9999999999 !important;" id="staticBackdrop"
+    data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="div">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <iframe width="100%" height="580px" [src]="Video"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <img class="bg_image" src="https://image.tmdb.org/t/p/w500/{{movieDetails.backdrop_path}}">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-3">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="card">
+        <img src="https://image.tmdb.org/t/p/w500/{{movieDetails.poster_path}}" class="d-block w-100">
+        <div class="card-body text-center">
+          <p class=" p-0 m-0 font-weight-bold">Now Streaming</p>
+          <b><a [href]="movieDetails.homepage" class="text text-decoration-none">Watch Now</a></b>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 text-white z-1">
+      <br>
+      <br>
+      <br>
+      <br>
+      <span class="name m-0">{{movieDetails.title}}&nbsp;({{movieDetails.release_date
+        |date:'YYYY'}})</span> <br>
+      <span class="card-text float-left">{{movieDetails.release_date | date}}&nbsp;(US) <span
+          class="dot">.&nbsp;</span><span class="d-inline-block"
+          *ngFor="let row of genres;let i=index">{{row.name}},&nbsp;</span></span> <br>
+      <span class="overview">Overview</span> <br>
+      <span>{{movieDetails.overview}}</span> <br> <br>
+      <div>
+        <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="getVideo()"
+          class="btn btn-outline-light" type="button"><i class="fa-solid fa-play"><a></a></i></button>&nbsp;
+        <b class="text-danger">Play Trailer</b> <br> <br>
+        <span>Status:&nbsp;<span class="status">{{movieDetails.status}}</span></span>
+        <div class="d-flex justify-content-center">
+          <h5>{{movieDetails.tagline}}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<app-footer></app-footer>

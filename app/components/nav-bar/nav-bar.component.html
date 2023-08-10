@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg fixed-top p-0" [ngStyle]="navbg">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">Flixcom</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="searchBox d-flex justify-content-center">
+      </div>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLinkActive="active" routerLink="/movies">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLinkActive="active" routerLink="/tvshows">Tv Shows</a>
+        </li>
+        <li class="nav-item">
+          <i class="nav-link search fa-solid fa-magnifying-glass" (click)="onElementClick()"></i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div id="myOverlay" [ngClass]="{'overlay1': isClicked}" class="overlay">
+  <div class="overlay-content">
+    <form>
+      <input type="text" [(ngModel)]="inputValue" placeholder="Search here for a movie or Tv show.." name="search">
+      <button type="submit" (click)="getValue()">Search</button>
+    </form>
+  </div>
+</div>

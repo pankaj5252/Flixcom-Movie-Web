@@ -1,0 +1,33 @@
+<app-nav-bar></app-nav-bar>
+<div *ngIf="isLoading" class="d-flex justify-content-center align-items-center spinner">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+<br>
+<br>
+<br>
+<br>
+  </div>
+</div>
+<div class="container p-3">
+  <div class="row">
+    <h4 class="text-white">Your Search Terms</h4>
+    <div class="box justify-content-center">
+        <div class="card bg-black m-2 p-0" style="width: 15rem;"
+        *ngFor="let row of searchDAta; let i=index" routerLink="/movies/{{row.id}}">
+        <img src="https://image.tmdb.org/t/p/w500/{{row.poster_path}}" class="d-block w-100">
+        <span class="type">{{row.media_type}}</span>
+        <div class="card-body">
+          <b class="card-text overflow-y-visible">{{row.title}}</b>
+          <b class="card-text overflow-y-visible">{{row.name}}</b>
+          <p class="card-text m-0">{{row.release_date | date}}</p>
+          <p class="card-text m-0">{{row.first_air_date | date}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,117 @@
+.navbar .navbar-brand {
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: 0.5px !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: white;
+  font-size: 18px;
+}
+
+.navbar-toggler{
+background-color: white;
+}
+
+.search{
+  margin-top: 5px;
+  font-weight: bold !important;
+  color: white !important;
+}
+
+.searchinput{
+  border-radius: 20px;
+  width: 400px;
+  float: left;
+}
+.btn{
+  border-radius: 20px;
+}
+
+.overlay1{
+  display: inline !important;
+}
+
+.overlay{
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 999 !important;
+  top: 0;
+  left: 0;
+  background-color: rgb(175, 157, 157);
+  background-color: rgba(0,0,0, 0.9); /* Black with a little bit see-through */
+}
+
+/* The content */
+.overlay-content {
+  position: relative;
+  top: 15%;
+  width: 90%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+/* Close button */
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+/* Style the search field */
+.overlay input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: white;
+  border-radius: 30px 0 0 30px;
+}
+
+.overlay input[type=text]:hover {
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+.overlay button {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 30px 30px 0;
+}
+.active{
+  color: #c1111c !important;
+  font-weight: bold;
+}
+@media only screen and (max-width: 600px) {
+  .navbar .navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .overlay{
+    z-index: 9999 !important;
+    top: 200px;
+  }
+  .overlay button {
+   width: 30%;
+  }
+  .overlay input[type=text] {
+    width: 70%;
+  }
+}

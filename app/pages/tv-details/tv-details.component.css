@@ -1,0 +1,68 @@
+
+.container-fluid {
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.bg_image {
+  width: 100%;
+  left: 0;
+  height: 690px;
+  position: absolute;
+  top: 0;
+  opacity: 0.4;
+}
+
+.card {
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  color: red;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 4px;
+  background-color: #E50914;
+}
+
+.card img {
+  height: 450px !important;
+}
+
+.card-body {
+  background-color: #032541;
+}
+
+.date {
+  font-weight: lighter;
+}
+
+.status {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.overview {
+  font-weight: bold;
+  font-size: 25px;
+}
+.spinner{
+  height: 100%;
+  width: 100%;
+  position: absolute!important ;
+  z-index: 999 !important;
+  color: rebeccapurple;
+  background-color: white;
+}
+@media only screen and (max-width: 600px) {
+  .name {
+    font-size: 24px;
+  }
+}

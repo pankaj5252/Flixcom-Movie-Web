@@ -1,0 +1,38 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="row">
+    <div class="d-flex justify-content-center mt-5 z-1 searchboxmbv">
+      <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="search" placeholder="Enter your search movie..."
+          class="searchinput border-danger form-control">
+        <button class="btn" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container p-3">
+  <div class="row">
+    <h4 class="text-white">Explore Movies</h4>
+    <div class="box justify-content-center">
+      <div class="card bg-black m-2 p-0" style="width: 15rem;" *ngFor="let row of GetNowPlaying | paginate: { itemsPerPage: itemsPerPage, currentPage: page }; let i=index"
+        routerLink="/movies/{{row.id}}">
+        <div *ngIf="isLoading" class="d-flex justify-content-center align-items-center spinner">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <img src="https://image.tmdb.org/t/p/w500/{{row.poster_path}}" class="d-block w-100">
+        <div class="card-body">
+          <b class="card-text overflow-y-visible">{{row.title}}</b>
+          <p class="card-text m-0">{{row.release_date | date}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+ <div class="d-flex justify-content-center">
+  <button class="button" (click)="previousPage()">PreviousPage</button>
+  <button class="button" (click)="nextPage()">NextPage</button>
+ </div>
+</div>
+<app-footer></app-footer>

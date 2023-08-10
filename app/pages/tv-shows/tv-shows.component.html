@@ -1,0 +1,33 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="row">
+    <div class="d-flex justify-content-center mt-5 z-1 searchboxmbv">
+      <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="search" placeholder="Enter your search movie..."
+          class="searchinput border-danger form-control">
+        <button class="btn" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container p-3">
+  <div class="row">
+    <h4 class="text-white">Explore Tv Shows</h4>
+    <div class="box justify-content-center">
+      <div class="card bg-black m-2 p-0" style="width: 15rem;" *ngFor="let row of Tvlatestshow; let i=index"
+        routerLink="/tv_details/{{row.id}}">
+        <img src="https://image.tmdb.org/t/p/w500/{{row.poster_path}}" class="d-block w-100">
+        <div class="card-body">
+          <b class="card-text overflow-y-visible">{{row.name}}</b>
+          <p class="card-text m-0">{{row.first_air_date | date}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="d-flex justify-content-center">
+    <button class="button" (click)="previousPage()"><<-Previous</button>
+    <button class="button"(click)="nextPage()">Next->></button>
+  </div>
+</div>
+<app-footer></app-footer>

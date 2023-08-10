@@ -1,0 +1,18 @@
+.footer-links {
+  list-style-type: none;
+  padding: 10px 0;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-links li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-links li a:hover {
+  text-decoration: underline;
+}

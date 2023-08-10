@@ -1,0 +1,115 @@
+<app-nav-bar></app-nav-bar>
+<ng-container>
+  <div class="container maintext z-3 text-center text-white">
+  <h1 class="welcome">Wellcome</h1>
+  <p class="text">Millions of movies, TV shows and people to discover. Explore now.</p>
+  <div class="d-flex justify-content-center">
+    <input type="text" [(ngModel)]="inputValue" class="form-control" placeholder="Search for a movie , tv show...">
+    <button (click)="getValue()" class="btn text-white searchbtn">Search</button>
+  </div>
+</div>
+<div class="container-fluid m-0 p-0">
+  <div id="carouselExampleCaptions" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item carousel slide" *ngFor="let row of MoviesData;let i=index" [ngClass]="{active:i===1}"
+        data-bs-interval="1000" data-interval="true" data-ride="carousel">
+        <img src="https://image.tmdb.org/t/p/w500/{{row.poster_path}}" class="d-block w-100">
+      </div>
+    </div>
+    <button class="carousel-control-prev d-none" type="button" data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next d-none" type="button" data-bs-target="#carouselExampleCaptions"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<div class="emtydiv1"></div>
+<div class="container">
+  <div class="row">
+    <div class="w-50 p-0">
+      <p class="heading">Tranding Movies</p>
+    </div>
+    <div class="w-50 p-0">
+      <div class="d-flex float-end shownames">
+        <a class="text-center" [class.active1]="active1" (click)="changelist()">Day</a>
+        <a class="text-center" [class.active2]="active2" (click)="changelist1()">Weeks</a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="card float-left bg-black m-1 p-1" style="width: 15.3rem;"
+        *ngFor="let row of trandingMoviesData; let i=index" routerLink="movies/{{row.id}}">
+        <img src="https://image.tmdb.org/t/p/w500/{{row.poster_path}}" class="d-block w-100">
+        <div class="card-body">
+          <b class="card-text overflow-y-visible">{{row.title}}</b>
+          <p class="card-text m-0">{{row.release_date | date}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="w-50 p-0">
+      <p class="heading">Tranding Tv Shows</p>
+    </div>
+    <div class="w-50 p-0">
+      <div class="d-flex float-end shownames">
+        <a class="text-center" [class.active3]="active3" (click)="changelistTv()">Day</a>
+        <a class="text-center" [class.active4]="active4" (click)="changelistTv1()">Weeks</a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="card float-left bg-black m-1 p-1" style="width: 15.3rem;" *ngFor="let row of TvShowData; let i=index"
+        routerLink="tv_details/{{row.id}}">
+        <img src="https://image.tmdb.org/t/p/w500/{{row.poster_path}}" class="d-block w-100">
+        <div class="card-body">
+          <b class="card-text overflow-y-visible">{{row.name}}</b>
+          <p class="card-text m-0">{{row.first_air_date | date}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="w-50 p-0">
+      <p class="heading">Top Rated</p>
+    </div>
+    <div class="w-50 p-0">
+      <div class="d-flex float-end shownames">
+        <a class="text-center" [class.active5]="active5" (click)="changelisttop()">Shows</a>
+        <a class="text-center" [class.active6]="active6" (click)="changelisttop1()">Movies</a>
+      </div>
+    </div>
+    <div class="box">
+      <ng-container *ngIf="TopTv">
+        <div class="card float-left bg-black m-1 p-1" style="width: 15.3rem;" *ngFor="let row of TopRated; let i=index"
+          routerLink="tv_details/{{row.id}}">
+          <img src="https://image.tmdb.org/t/p/w500/{{row.poster_path}}" class="d-block w-100">
+          <div class="card-body">
+            <b class="card-text overflow-y-visible">{{row.name}}{{row.title}}</b>
+            <p class="card-text m-0">{{row.first_air_date | date}}{{row.release_date | date}}</p>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="TopMovies">
+        <div class="card float-left bg-black m-1 p-1" style="width: 15.3rem;" *ngFor="let row of TopRated; let i=index"
+          routerLink="movies/{{row.id}}">
+          <img src="https://image.tmdb.org/t/p/w500/{{row.poster_path}}" class="d-block w-100">
+          <div class="card-body">
+            <b class="card-text overflow-y-visible">{{row.name}}{{row.title}}</b>
+            <p class="card-text m-0">{{row.first_air_date | date}}{{row.release_date | date}}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+</ng-container>
+
+<app-footer></app-footer>
